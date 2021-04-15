@@ -2,6 +2,8 @@
 
 <h1>Posts</h1>
 
+<%= render 'form', post: @post %>
+
 <table>
   <thead>
     <tr>
@@ -12,12 +14,7 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+       <%= render 'post', post: post %>
     <% end %>
   </tbody>
 </table>
@@ -25,3 +22,5 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
+<div id="post-content"></div>
