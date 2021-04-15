@@ -1,3 +1,5 @@
 var elemento = document.querySelector('table tbody') 
 elemento.insertAdjacentHTML('beforeend', "<%= escape_javascript(render partial: 'posts/post', locals: {post: @post}) %>")
 
+var content = document.querySelector('#post_content') //para q me borre el contenido del content cuano voy a crear uno nuevo y lo creo q el espacio del content quede vacio
+content.value = ''
